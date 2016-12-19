@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/content_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.map.distanceconverter.MainActivity"
+    tools:showIn="@layout/activity_main"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="2dp"
+    android:paddingRight="2dp">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="30dp">
+
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:clickable="true"
+            android:focusableInTouchMode="true">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="numberDecimal"
+                android:ems="10"
+                android:id="@+id/distanceEditText"
+                android:layout_margin="@dimen/view_margin"
+                android:padding="@dimen/view_padding"
+                android:elevation="@dimen/elevation"
+                android:layout_gravity="fill_horizontal"
+                android:gravity="center"
+                android:layout_row="0"
+                android:layout_column="0"
+                android:imeOptions="actionDone"
+                android:layout_columnSpan="2"
+                android:background="@color/background"
+                android:hint="@string/distance_hint"
+                android:onClick="showMessage"
+                android:textColor="@color/textColor"
+                android:textColorHint="@color/textColor"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/distanceTextView"
+                android:layout_row="0"
+                android:layout_column="0"
+                android:layout_columnSpan="2"
+                android:elevation="@dimen/elevation"
+                android:layout_gravity="fill_horizontal"
+                android:gravity="center"
+                android:padding="@dimen/view_padding" />
+
+            <RadioGroup
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_row="1"
+                android:layout_column="0"
+                android:layout_columnSpan="2"
+                android:orientation="horizontal"
+                android:layout_gravity="fill_horizontal"
+                android:focusableInTouchMode="true"
+                android:padding="@dimen/view_padding"
+                android:layout_margin="@dimen/view_margin"
+                android:id="@+id/chooseDistance"
+                android:layout_marginLeft="20dp">
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/distKilo"
+                    android:layout_weight="1"
+                    android:text="Km"
+                    android:checked="false"
+                    android:padding="@dimen/radio_padding"
+                    android:onClick="onRadioButton"
+                    android:layout_margin="@dimen/radio_margin" />
+
+                <RadioButton
+                    android:text="Inches"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/distInches"
+                    android:layout_weight="1"
+                    android:padding="@dimen/radio_padding"
+                    android:onClick="onRadioButton"
+                    android:layout_margin="@dimen/radio_margin"
+                    android:layout_marginLeft="20dp" />
+
+                <RadioButton
+                    android:text="Feet"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/distFeet"
+                    android:layout_weight="1"
+                    android:onClick="onRadioButton"
+                    android:padding="@dimen/radio_padding"
+                    android:layout_margin="@dimen/radio_margin" />
+
+            </RadioGroup>
+
+            <TextView
+                android:text="Kilometers"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/kiloHeader"
+                android:layout_row="2"
+                android:layout_column="0"
+                android:layout_columnSpan="2"
+                android:layout_margin="@dimen/header_margin"
+                android:padding="@dimen/header_padding"
+                android:layout_gravity="fill_horizontal"
+                android:gravity="center"
+                android:textSize="@dimen/text_size" />
+
+
+            <TextView
+                android:hint="@string/hint_kilo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/kiloTextView"
+                android:layout_row="3"
+                android:layout_column="0"
+                android:layout_columnSpan="2"
+                android:background="@color/background"
+                android:elevation="@dimen/elevation"
+                android:gravity="center"
+                android:layout_gravity="fill_horizontal"
+                android:padding="@dimen/view_padding"
+                android:layout_margin="@dimen/view_margin"
+                android:textSize="@dimen/text_size"
+                android:textColor="@color/textColor"
+                android:textColorHint="@color/textColor"/>
+
+            <TextView
+                android:text="Inches"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/inchHeader"
+                android:layout_column="0"
+                android:layout_row="4"
+                android:layout_columnSpan="2"
+                android:gravity="center"
+                android:layout_margin="@dimen/header_margin"
+                android:padding="@dimen/header_padding"
+                android:textSize="@dimen/text_size"
+                android:layout_gravity="fill_horizontal"/>
+
+            <TextView
+                android:hint="@string/hint_kilo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/inchTextView"
+                android:layout_row="5"
+                android:layout_column="0"
+                android:layout_columnSpan="2"
+                android:background="@color/background"
+                android:elevation="@dimen/elevation"
+                android:gravity="center"
+                android:layout_gravity="fill_horizontal"
+                android:padding="@dimen/view_padding"
+                android:layout_margin="@dimen/view_margin"
+                android:textSize="@dimen/text_size"
+                android:textColor="@color/textColor"
+                android:textColorHint="@color/textColor"/>
+
+            <TextView
+                android:text="Feet"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/feetHeader"
+                android:layout_row="6"
+                android:layout_column="0"
+                android:layout_columnSpan="2"
+                android:gravity="center"
+                android:layout_gravity="fill_horizontal"
+                android:textSize="@dimen/text_size"
+                android:padding="@dimen/header_padding"
+                android:layout_margin="@dimen/header_margin"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/feetTextView"
+                android:layout_row="7"
+                android:layout_column="0"
+                android:layout_columnSpan="2"
+                android:gravity="center"
+                android:textSize="@dimen/text_size"
+                android:layout_gravity="fill_horizontal"
+                android:hint="@string/hint_kilo"
+                android:textColorHint="@color/textColor"
+                android:background="@color/background"
+                android:elevation="@dimen/elevation"
+                android:padding="@dimen/view_padding"
+                android:textColor="@color/textColor"
+                android:layout_margin="@dimen/view_margin"/>
+        </GridLayout>
+    </ScrollView>
+</GridLayout>

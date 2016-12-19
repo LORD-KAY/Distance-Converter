@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <ImageView
+        android:layout_width="120dip"
+        android:layout_height="120dip"
+        android:id="@+id/myLogo"
+        android:scaleType="fitXY"
+        android:layout_gravity="center_horizontal"
+        android:shadowColor="@color/text_shadow"
+        android:shadowDx="1"
+        android:shadowDy="1"
+        android:shadowRadius="2"
+        android:layout_marginTop="130dp"
+        android:src="@mipmap/ic_launcher">
+    </ImageView>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="fill_horizontal"
+        android:gravity="center"
+        android:text="Distance Converter"
+        android:shadowColor="@color/text_shadow"
+        android:shadowDx="1"
+        android:shadowDy="1"
+        android:shadowRadius="2"
+        android:textStyle="bold"
+        android:padding="@dimen/view_padding"
+        android:layout_margin="@dimen/view_margin"
+        android:id="@+id/LogoName"
+        android:textColor="#e3999595"
+        android:textSize="@dimen/logo_text"
+        android:textAlignment="center" />
+
+</LinearLayout>
